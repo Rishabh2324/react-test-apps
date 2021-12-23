@@ -1,0 +1,12 @@
+.SearchComponent {
+  position: absolute;
+  top: 15px;
+}
+.SearchComponent input {
+  border: 0;
+  background-color: seashell;
+  height: 25px;
+  width: 500px;
+  text-align: center;
+  border-radius: 1.5625rem;
+}
