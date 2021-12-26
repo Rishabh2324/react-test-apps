@@ -1,15 +1,14 @@
 .App {
-  position: relative;
   text-align: center;
-  overflow: hidden;
 }
 
 .App-logo {
-  position: absolute;
+  position: fixed;
   pointer-events: none;
   width: 150rem;
   opacity: 0.2;
   height: auto;
+  top: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,9 +25,10 @@
   justify-items: center;
   grid-gap: 1.25rem;
   min-height: 100vh;
-  background-color: #282c34;
   color: white;
   padding: 0 1.25rem;
+  position: relative;
+  overflow: hidden;
 }
 
 @keyframes App-logo-spin {
@@ -38,4 +38,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.LoadingComponent {
+  color: white;
 }

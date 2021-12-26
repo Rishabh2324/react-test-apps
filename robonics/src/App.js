@@ -1,44 +1,74 @@
 import { useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
+
+import SearchComponent from './SearchComponent';
 import CardComponent from './CardComponent';
 
 import { robots } from './robots';
 import logo from './logo.svg';
+
 import './App.css';
-import SearchComponent from './SearchComponent';
 
 function App() {
-  const [robotList, setRobotList] = useState(robots);
   const [searchValue, setSearchValue] = useState('');
 
   const onSearchChange = (e) => {
-    e.preventDefault();
     setSearchValue(e.target.value);
-    let list = robotList.filter((robo) =>
-      robo.name.toLowerCase().includes(searchValue.toLowerCase().trim())
+    setCurrent(
+      current.filter((robo) =>
+        robo.name.toLowerCase().includes(searchValue.toLowerCase())
+      )
     );
-    if (list.length > 0) setRobotList(list);
-    else setRobotList(robots);
+  };
+
+  const [count, setCount] = useState({
+    prev: 0,
+    next: 12,
+  });
+  const [hasMore, setHasMore] = useState(true);
+  const [current, setCurrent] = useState(robots.slice(count.prev, count.next));
+  const getMoreData = () => {
+    if (current.length === robots.length) {
+      setHasMore(false);
+      return;
+    }
+    setTimeout(() => {
+      setCurrent(
+        current.concat(robots.slice(count.prev + 12, count.next + 12))
+      );
+    }, 2000);
+    setCount((prevState) => ({
+      prev: prevState.prev + 12,
+      next: prevState.next + 12,
+    }));
   };
 
   return (
     <div className="App">
-      <div className="App-logo">
-        <img src={logo} alt="logo" />
-      </div>
-      <main className="App-body">
-        <SearchComponent
-          searchChange={onSearchChange}
-          searchValue={searchValue}
-        />
-        {robotList.map((robot) => (
-          <CardComponent
-            name={robot.name}
-            email={robot.email}
-            key={robot.id}
-            robotId={robot.id}
-          />
-        ))}
-      </main>
+      <SearchComponent
+        searchChange={onSearchChange}
+        searchValue={searchValue}
+      />
+      <InfiniteScroll
+        dataLength={current.length}
+        next={getMoreData}
+        hasMore={hasMore}
+        loader={<h1 className="LoadingComponent">Loading Robots...</h1>}
+      >
+        <main className="App-body">
+          {current.map((robot) => (
+            <CardComponent
+              name={robot.name}
+              email={robot.email}
+              key={robot.id}
+              robotId={robot.id}
+            />
+          ))}
+          <div className="App-logo">
+            <img src={logo} alt="logo" />
+          </div>
+        </main>
+      </InfiniteScroll>
     </div>
   );
 }
