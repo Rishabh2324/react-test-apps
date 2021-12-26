@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Rishabh2324/react-test-apps/tree/master/robonics/static/css/main.502ed7cf.css",
-    "main.js": "/Rishabh2324/react-test-apps/tree/master/robonics/static/js/main.0400bdf1.js",
-    "static/js/787.b7384e90.chunk.js": "/Rishabh2324/react-test-apps/tree/master/robonics/static/js/787.b7384e90.chunk.js",
-    "static/media/logo.svg": "/Rishabh2324/react-test-apps/tree/master/robonics/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Rishabh2324/react-test-apps/tree/master/robonics/index.html",
-    "main.502ed7cf.css.map": "/Rishabh2324/react-test-apps/tree/master/robonics/static/css/main.502ed7cf.css.map",
-    "main.0400bdf1.js.map": "/Rishabh2324/react-test-apps/tree/master/robonics/static/js/main.0400bdf1.js.map",
-    "787.b7384e90.chunk.js.map": "/Rishabh2324/react-test-apps/tree/master/robonics/static/js/787.b7384e90.chunk.js.map"
+    "main.css": "/Rishabh2324/react-test-apps/static/css/main.502ed7cf.css",
+    "main.js": "/Rishabh2324/react-test-apps/static/js/main.82494299.js",
+    "static/js/787.b7384e90.chunk.js": "/Rishabh2324/react-test-apps/static/js/787.b7384e90.chunk.js",
+    "static/media/logo.svg": "/Rishabh2324/react-test-apps/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Rishabh2324/react-test-apps/index.html",
+    "main.502ed7cf.css.map": "/Rishabh2324/react-test-apps/static/css/main.502ed7cf.css.map",
+    "main.82494299.js.map": "/Rishabh2324/react-test-apps/static/js/main.82494299.js.map",
+    "787.b7384e90.chunk.js.map": "/Rishabh2324/react-test-apps/static/js/787.b7384e90.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.502ed7cf.css",
-    "static/js/main.0400bdf1.js"
+    "static/js/main.82494299.js"
   ]
 }
